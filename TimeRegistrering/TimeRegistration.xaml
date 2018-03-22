@@ -1,0 +1,84 @@
+﻿<Window x:Class="TimeRegistrering.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TimeRegistrering"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="Time Registrering" Height="400" Width="1000">
+    <Grid>
+        <GroupBox x:Name="gboPerson" Header="Person" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="270" Width="480" FontSize="14">
+            <Grid HorizontalAlignment="Left" Height="246" Margin="-1,0,-1,-2" VerticalAlignment="Top" Width="470">
+                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Vælg" VerticalAlignment="Top" FontSize="14" FontWeight="Normal"/>
+                <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="10,60,0,0" TextWrapping="Wrap" Text="Navn" VerticalAlignment="Top" FontSize="14" FontWeight="Normal"/>
+                <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="Adresse" VerticalAlignment="Top" FontSize="14" FontWeight="Normal"/>
+                <TextBlock x:Name="textBlock_Copy2" HorizontalAlignment="Left" Margin="10,120,0,0" TextWrapping="Wrap" Text="Post By" VerticalAlignment="Top" FontSize="14" FontWeight="Normal"/>
+                <TextBlock x:Name="textBlock_Copy3" HorizontalAlignment="Left" Margin="10,150,0,0" TextWrapping="Wrap" Text="Telefon" VerticalAlignment="Top" FontSize="14" FontWeight="Normal"/>
+                <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Left" Margin="10,180,0,0" TextWrapping="Wrap" Text="Mail" VerticalAlignment="Top" FontSize="14" FontWeight="Normal"/>
+                <ComboBox x:Name="cboSelectPerson" HorizontalAlignment="Left" Margin="100,10,0,0" VerticalAlignment="Top" Width="360" SelectionChanged="cboSelectPerson_SelectionChanged"/>
+                <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="23" Margin="100,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="360" FontWeight="Normal" Background="#FFDDDDDD"/>
+                <TextBox x:Name="txtAdress" HorizontalAlignment="Left" Height="23" Margin="100,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="360" FontWeight="Normal" Background="#FFDDDDDD"/>
+                <TextBox x:Name="txtCity" HorizontalAlignment="Left" Height="23" Margin="165,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" FontWeight="Normal" Background="#FFDDDDDD"/>
+                <TextBox x:Name="txtPhoneNumber" HorizontalAlignment="Left" Height="23" Margin="100,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="360" FontWeight="Normal" Background="#FFDDDDDD"/>
+                <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="100,179,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="360" FontWeight="Normal" Background="#FFDDDDDD"/>
+                <Button x:Name="btnCreateEdit" Content="Opret / Rediger" HorizontalAlignment="Left" Margin="100,213,0,0" VerticalAlignment="Top" Width="270" Background="#FFDDDDDD" Click="btnCreateEdit_Click"/>
+                <TextBox x:Name="txtAreaCode" HorizontalAlignment="Left" Height="23" Margin="100,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" FontWeight="Normal" Background="#FFDDDDDD"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="gboTimer" Header="Timer" HorizontalAlignment="Left" Margin="502,10,0,0" VerticalAlignment="Top" Height="190" Width="480" FontSize="14">
+            <Grid HorizontalAlignment="Left" Height="168" VerticalAlignment="Top" Width="470" Margin="-1,0,-1,-4">
+                <TextBlock x:Name="textBlock_Copy5" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" FontWeight="Normal" Height="45"><Run Text="Afregnings"/><LineBreak/><Run Text="Måned"/></TextBlock>
+                <TextBlock x:Name="textBlock_Copy6" HorizontalAlignment="Left" Margin="10,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" FontWeight="Normal"><Run Text="Timer"/><Run Text=" i denne uge"/></TextBlock>
+                <TextBlock x:Name="textBlock_Copy7" HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="Timer i denne måned" VerticalAlignment="Top" FontSize="12" FontWeight="Normal"/>
+                <TextBlock x:Name="textBlock_Copy8" HorizontalAlignment="Left" Margin="10,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" FontWeight="Normal"><Run Text="Timer i"/><Run Text=" "/><Run Text="dette år"/></TextBlock>
+                <ComboBox x:Name="cboSelectPayoffMonth" HorizontalAlignment="Left" Margin="138,10,0,0" VerticalAlignment="Top" Width="322" Background="Black" SelectionChanged="cboSelectPayoffMonth_SelectionChanged">
+                    <ComboBoxItem Content="Januar" HorizontalAlignment="Left" Width="320"/>
+                    <ComboBoxItem Content="Februar" HorizontalAlignment="Left" Width="320"/>
+                    <ComboBoxItem Content="Marts" HorizontalAlignment="Left" Width="320"/>
+                    <ComboBoxItem Content="April" HorizontalAlignment="Left" Width="320"/>
+                    <ComboBoxItem Content="Maj" HorizontalAlignment="Left" Width="320"/>
+                    <ComboBoxItem Content="Juni" HorizontalAlignment="Left" Width="320"/>
+                    <ComboBoxItem Content="Juli" HorizontalAlignment="Left" Width="320"/>
+                    <ComboBoxItem Content="August" HorizontalAlignment="Left" Width="320"/>
+                    <ComboBoxItem Content="September" HorizontalAlignment="Left" Width="320"/>
+                    <ComboBoxItem Content="Oktober" HorizontalAlignment="Left" Width="320"/>
+                    <ComboBoxItem Content="November" HorizontalAlignment="Left" Width="320"/>
+                    <ComboBoxItem Content="December" HorizontalAlignment="Left" Width="320"/>
+                </ComboBox>
+                <TextBox x:Name="txtHoursThisWeek" HorizontalAlignment="Left" Height="23" Margin="138,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="322" FontWeight="Normal" Background="#FFDDDDDD"/>
+                <TextBox x:Name="txtHoursThisMonth" HorizontalAlignment="Left" Height="23" Margin="138,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="322" FontWeight="Normal" Background="#FFDDDDDD"/>
+                <TextBox x:Name="txtHoursThisYear" HorizontalAlignment="Left" Height="23" Margin="138,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="322" FontWeight="Normal" Background="#FFDDDDDD"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="gboHourRegistration" Header="Time registrering" HorizontalAlignment="Left" Margin="10,282,0,0" VerticalAlignment="Top" Height="77" Width="972">
+            <Grid HorizontalAlignment="Left" Height="55" Margin="-1,0,-1,-4" VerticalAlignment="Top" Width="962">
+                <DatePicker x:Name="dtpSelectDate" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="35" Width="203" FirstDayOfWeek="Monday"/>
+                <GroupBox x:Name="gboStartTime" Header="Fra klokken" HorizontalAlignment="Left" Margin="230,0,0,0" VerticalAlignment="Top" Height="45" Width="162">
+                    <Grid HorizontalAlignment="Left" Height="26" Margin="-1,0,-1,-3" VerticalAlignment="Top" Width="152">
+                        <ComboBox x:Name="cboStartHour" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="20" Margin="10,2,0,0" SelectionChanged="cboStartHour_SelectionChanged">
+                        </ComboBox>
+                        <ComboBox x:Name="cboStartMinute" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="20" Margin="65,2,0,0" SelectionChanged="cboStartMinute_SelectionChanged"/>
+                    </Grid>
+                </GroupBox>
+                <GroupBox x:Name="gboEndTime" Header="Til klokken" HorizontalAlignment="Left" Margin="397,0,0,0" VerticalAlignment="Top" Height="45" Width="162">
+                    <Grid HorizontalAlignment="Left" Height="26" Margin="-1,0,-1,-3" VerticalAlignment="Top" Width="152">
+                        <ComboBox x:Name="cboEndHour" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="20" Margin="10,2,0,0" SelectionChanged="cboEndHour_SelectionChanged"/>
+                        <ComboBox x:Name="cboEndMinute" HorizontalAlignment="Left" VerticalAlignment="Top" Width="50" Height="20" Margin="65,2,0,0" SelectionChanged="cboEndMinute_SelectionChanged"/>
+                    </Grid>
+                </GroupBox>
+                <TextBox x:Name="txtHours" HorizontalAlignment="Left" Height="23" Margin="564,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="186" FontWeight="Normal" Background="#FFDDDDDD" IsReadOnly="True"/>
+                <Button x:Name="btnSaveTimer" Content="Gem timer" HorizontalAlignment="Left" Margin="772,16,0,0" VerticalAlignment="Top" Width="180" Height="23" Click="btnSaveTimer_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="gboSalary" Header="Løn" HorizontalAlignment="Left" Margin="502,202,0,0" VerticalAlignment="Top" Height="78" Width="480" FontSize="14">
+            <Grid HorizontalAlignment="Left" Height="55" Margin="-1,0,0,-3" VerticalAlignment="Top" Width="469">
+                <TextBlock x:Name="textBlock_Copy9" HorizontalAlignment="Left" Margin="10,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" FontWeight="Normal" Text="Aftalt timeløn"/>
+                <TextBlock x:Name="textBlock_Copy10" HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" FontWeight="Normal" Text="Til udbetaling i valgte måned"/>
+                <TextBox x:Name="txtAgreedSalary" HorizontalAlignment="Left" Height="18" Margin="137,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="322" FontWeight="Normal" Background="#FFDDDDDD"/>
+                <TextBox x:Name="txtPayoffSelectedMonth" HorizontalAlignment="Left" Height="18" Margin="169,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="290" FontWeight="Normal" Background="#FFDDDDDD"/>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>
